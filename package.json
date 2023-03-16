@@ -1,0 +1,45 @@
+{
+  "name": "typescript-plugin-yaml",
+  "version": "0.0.1",
+  "description": "A Typescript language service plugin for YAML",
+  "main": "dist/index.js",
+  "files": [
+    "dist"
+  ],
+  "license": "MIT",
+  "keywords": [
+    "Typescript",
+    "Typescript language service",
+    "YAML"
+  ],
+  "author": {
+    "name": "await-ovo",
+    "email": "13152410380@163.com"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/await-ovo/typescript-plugin-yaml.git"
+  },
+  "bugs": {
+    "url": "https://github.com/await-ovo/typescript-plugin-yaml/issues"
+  },
+  "scripts": {
+    "dev": "rm -rf dist && tsc -w",
+    "build": "rm -rf dist && tsc",
+    "prepublishOnly": "pnpm run build"
+  },
+  "dependencies": {
+    "js-yaml": "^4.1.0"
+  },
+  "devDependencies": {
+    "@types/js-yaml": "^4.0.5",
+    "@types/node": "^18.15.3",
+    "typescript": "^4.9.5"
+  },
+  "prettier": {
+    "singleQuote": true,
+    "semi": true,
+    "trailingComma": "all",
+    "bracketSpacing": true
+  }
+}
