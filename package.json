@@ -1,6 +1,6 @@
 {
   "name": "typescript-plugin-yaml",
-  "version": "0.0.3",
+  "version": "0.0.5",
   "description": "A Typescript Language Service plugin for YAML",
   "main": "dist/index.js",
   "files": [
