@@ -1,10 +1,10 @@
 {
   "name": "typescript-plugin-yaml",
-  "version": "0.0.1",
-  "description": "A Typescript language service plugin for YAML",
+  "version": "0.0.2",
+  "description": "A Typescript Language Service plugin for YAML",
   "main": "dist/index.js",
   "files": [
-    "dist"
+    "./dist"
   ],
   "license": "MIT",
   "keywords": [

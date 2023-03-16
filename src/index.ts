@@ -1,4 +1,4 @@
-import path, { resolve } from 'path';
+import path from 'path';
 import fs from 'fs';
 import jsYaml from 'js-yaml';
 
