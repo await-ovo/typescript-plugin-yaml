@@ -1,8 +1,9 @@
 import path from 'path';
 import fs from 'fs';
 import jsYaml from 'js-yaml';
+import { VALID_VARIABLE_NAME_REGEX } from './constants'
 
-export default function init(modules: {
+export = function init(modules: {
   typescript: typeof import('typescript/lib/tsserverlibrary');
 }) {
   const ts = modules.typescript;
@@ -156,12 +157,12 @@ function createDts(filepath: string, logger: ts.server.Logger) {
 
     if (Object.prototype.toString.call(doc) === '[object Object]') {
       dts += Object.keys(doc)
-        .map((key) => `export const ${key} = ${JSON.stringify(doc[key])}`)
+        .filter(key => VALID_VARIABLE_NAME_REGEX.test(key))
+        .map((key) => `export let ${key} = ${JSON.stringify(doc[key])}`)
         .join('\n');
-      dts += `\nexport default { ${Object.keys(doc).join(',')} }`;
-    } else {
-      dts += `export default ${JSON.stringify(doc)}`;
-    }
+    } 
+
+    dts += `\nexport default ${JSON.stringify(doc)}`;
 
     return dts;
   } catch (err) {
